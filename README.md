@@ -13,7 +13,7 @@ Projeto de conclusão do curso de compiladores, se trata de um analisador léxic
 
 ## Documentation:
 
-## :settings: To update
+## :construction_worker: To update
 ```bash
 npm run dev
 ```
@@ -23,7 +23,7 @@ npm run dev
 node dist/index.js
 ```
 
-## :list: Lista de palavras reservadas
+## :page_facing_up: Lista de palavras reservadas
 ```txt
 'booo' | 'nuque' | 'sicle' |  'galeao' | 'perg' | 'mob' | 'acro' | 'Pacto' | 
 'Expecto' |  'Patronum' | 'reveal' | 'ce' | 'elce' | 'lastCase' | 'loop' | 
