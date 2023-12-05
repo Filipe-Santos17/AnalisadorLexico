@@ -5,7 +5,7 @@ Trabalho de conclusão da disciplina de Compiladores (CCP154GP).
 
 - [Sobre](#sobre)
 - [Documentation](#documentation)
-- [Lista de palavras reservadas](#Lista_de_palavras_reservadas)
+- [Lista de palavras reservadas](#lista-de-palavras-reservadas)
 - [Autômatos](#autômatos)
 
 ## Sobre:
