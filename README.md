@@ -13,7 +13,7 @@ Projeto de conclusão do curso de compiladores, se trata de um analisador léxic
 
 ## Documentation:
 
-## :settings: To update:
+## :settings: To update
 ```bash
 npm run dev
 ```
@@ -31,14 +31,14 @@ node dist/index.js
 'alive' | 'dead' | 'temporary' | 'eternal' | 'lumus' | 'truth'
 ```
 
-## :computer: Autômatos:
+## :computer: Autômatos
 Autômatos de tokens:
 ![](automatos/automato-tokens.png)
 
 Autômatos de palavras reservadas:
 ![](automatos/automato-palavras-reservadas.png)
 
-## Feito com :love: com:
+## Feito com :love: com
 - [TypeScript](https://www.typescriptlang.org/docs/)
 - [Tsup](https://github.com/egoist/tsup)
 - [NodeJs](https://nodejs.org/en)
