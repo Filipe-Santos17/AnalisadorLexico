@@ -38,7 +38,7 @@ Autômatos de tokens:
 Autômatos de palavras reservadas:
 ![](automatos/automato-palavras-reservadas.png)
 
-## Feito com :love: com
+## Feito com :heart: com
 - [TypeScript](https://www.typescriptlang.org/docs/)
 - [Tsup](https://github.com/egoist/tsup)
 - [NodeJs](https://nodejs.org/en)
