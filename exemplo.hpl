@@ -1,0 +1,21 @@
+/** Faca uma funcao que calcule a area de um retangulo **/
+
+nuque calculaArea1 (nuque base, nuque altura) {
+  nuque area = base * altura;
+  
+  expelliarmus area;
+}
+
+int main(){
+  nuque base, altura, area1;
+
+  lumus("Informe o valor da base(em metros): ");
+  truth base;
+
+  area1 = calculaArea1(base, altura);
+
+  lumus("A area do projeto e " + area1 + " metros");
+
+  expelliarmus 0;
+}
+

@@ -1,0 +1,39 @@
+Palavras reservadas da minha linguagem:
+--bool = booo
+--double = nuque
+--float = sicle 
+--int = galeao
+--string = perg
+
+--obj = mob
+--array = acro
+
+--await = Pacto
+
+--try = Expecto 
+--catch = Patronum
+
+--typeof = reveal
+
+--if = ce (Conditional Enchantment)
+--else = elce
+--else if = lastCase
+
+--for = loop
+--while = turnstime
+--break = stop
+--continue = proceed
+
+--fn = spell
+--return = expelliarmus
+
+--end = AvadaKedavra
+
+--true = alive
+--false = dead
+
+--var = temporary
+--const = eternal
+
+--print = lumus
+--input = truth
