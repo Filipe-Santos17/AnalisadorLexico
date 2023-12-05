@@ -18,7 +18,7 @@ Projeto de conclusão do curso de compiladores, se trata de um analisador léxic
 npm run dev
 ```
 
-## :rocket: To run:
+## :rocket: To run 
 ```bash
 node dist/index.js
 ```
