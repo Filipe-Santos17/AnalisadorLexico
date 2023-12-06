@@ -1,12 +1,12 @@
 /** Faca uma funcao que calcule a area de um retangulo **/
 
-nuque calculaArea1 (nuque base, nuque altura) {
+nuque spell calculaArea1 (nuque base, nuque altura) {
   nuque area = base * altura;
   
   expelliarmus area;
 }
 
-int main(){
+int spell main(){
   nuque base, altura, area1;
 
   lumus("Informe o valor da base(em metros): ");
@@ -18,4 +18,6 @@ int main(){
 
   expelliarmus 0;
 }
+
+main()
 
