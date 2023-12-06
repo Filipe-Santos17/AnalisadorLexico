@@ -6,7 +6,7 @@ nuque spell calculaArea1 (nuque base, nuque altura) {
   expelliarmus area;
 }
 
-int spell main(){
+nuque spell main(){
   nuque base, altura, area1;
 
   lumus("Informe o valor da base(em metros): ");
