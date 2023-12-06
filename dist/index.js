@@ -1,30 +1,4 @@
 "use strict";
-var __create = Object.create;
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
-
-// index.ts
-var import_node_fs = __toESM(require("fs"));
-var import_node_path = __toESM(require("path"));
 
 // src/Utils.ts
 var Utils = {
@@ -48,11 +22,11 @@ var Utils = {
     const arrayOperators = [">", "<", "=", "!", "+", "-", "*", "/"];
     return arrayOperators.includes(caracter);
   },
-  isCommentStart(current, next) {
-    return current == "/" && next == "*";
+  isCommentStart(current, next, nextTwo) {
+    return current == "/" && next == "*" && nextTwo == "*";
   },
-  isCommentEnd(current, next) {
-    return current == "*" && next == "/";
+  isCommentEnd(current, next, nextTwo) {
+    return current == "*" && next == "*" && nextTwo == "/";
   },
   reseverdWords: () => [
     // Tipos basicos
@@ -136,14 +110,15 @@ function receiveToken(token, lines, column2) {
   console.log(lineTable);
   tokens.push(lineTable);
 }
-function Leitor(textContent) {
-  if (typeof textContent !== "string")
+function Leitor(textContent2) {
+  if (typeof textContent2 !== "string")
     return [];
   let word = "";
   let isComment = false;
-  const allContent = textContent.split("");
+  const allContent = textContent2.split("");
   allContent.forEach((letter, i) => {
     const nextLetter = allContent[++i];
+    const nextTwoLetter = allContent[i + 1];
     column++;
     if (letter === "\n") {
       line++;
@@ -165,10 +140,8 @@ function Leitor(textContent) {
           word = "";
         } else if (isSimbol(letter)) {
           receiveToken(letter, line, column);
-        } else if (isCommentStart(letter, nextLetter)) {
-          isComment = true;
-        } else if (isCommentEnd(letter, nextLetter)) {
-          isComment = false;
+        } else if (isCommentStart(letter, nextLetter, nextTwoLetter)) {
+          state = 3;
         }
         break;
       case 1:
@@ -206,20 +179,36 @@ function Leitor(textContent) {
           state = 0;
         }
         break;
+      case 3:
+        if (isCommentEnd(letter, nextLetter, nextTwoLetter)) {
+          state = 0;
+        }
+        break;
     }
   });
   return tokens;
 }
 
 // index.ts
-var filePath = import_node_path.default.join(__dirname, "../exemplo.hpl");
-function main() {
-  import_node_fs.default.readFile(filePath, { encoding: "utf-8" }, function(err, textContent) {
-    if (!err) {
-      Leitor(textContent);
-    } else {
-      console.log(`N\xE3o foi possivel abrir o arquivo: ${err}`);
-    }
-  });
-}
-main();
+var textContent = `/** Faca uma funcao que calcule a area de um retangulo **/
+
+      nuque calculaArea1 (nuque base, nuque altura) {
+        nuque area = base * altura;
+        
+        expelliarmus area;
+      }
+      
+      int main(){
+        nuque base, altura, area1;
+      
+        lumus("Informe o valor da base(em metros): ");
+        truth base;
+      
+        area1 = calculaArea1(base, altura);
+      
+        lumus("A area do projeto e " + area1 + " metros");
+      
+        expelliarmus 0;
+      }
+      `;
+Leitor(textContent);

@@ -23,12 +23,12 @@ const Utils = {
     return arrayOperators.includes(caracter);
   },
 
-  isCommentStart(current: string, next: string): boolean {
-    return current == '/' && next == '*';
+  isCommentStart(current: string, next: string, nextTwo: string): boolean {
+    return current == '/' && next == '*' && nextTwo == "*";
   },
 
-  isCommentEnd(current: string, next: string): boolean {
-    return current == '*' && next == '/';
+  isCommentEnd(current: string, next: string, nextTwo: string): boolean {
+    return current == '*' && next == '*' && nextTwo == "/";
   },
 
   reseverdWords: () => [ // Tipos basicos

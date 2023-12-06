@@ -10,7 +10,9 @@ function receiveToken(token: string, lines: number, column: number) {
   if (token === "") return;
 
   const lineTable = `Token: "${token}", linha: ${lines}, coluna: ${column}`;
+
   console.log(lineTable)
+
   tokens.push(lineTable)
 }
 
@@ -24,6 +26,7 @@ export default function Leitor(textContent: string): string[] {
 
   allContent.forEach((letter, i) => {
     const nextLetter = allContent[++i]
+    const nextTwoLetter = allContent[i+1]
 
     column++
 
@@ -54,11 +57,8 @@ export default function Leitor(textContent: string): string[] {
         else if (isSimbol(letter)) {
           receiveToken(letter, line, column);
         }
-        else if (isCommentStart(letter, nextLetter)) {
-          isComment = true;
-        }
-        else if (isCommentEnd(letter, nextLetter)) {
-          isComment = false;
+        else if (isCommentStart(letter, nextLetter, nextTwoLetter)) {
+          state = 3;
         }
         break;
       case 1:
@@ -93,13 +93,18 @@ export default function Leitor(textContent: string): string[] {
           receiveToken(word, line, column);
           word = "";
         } else {
-          if(word !== ""){
+          if (word !== "") {
             receiveToken(word, line, column);
           }
           word = "";
           state = 0;
         }
 
+        break;
+      case 3:
+        if (isCommentEnd(letter, nextLetter, nextTwoLetter)) {
+          state = 0;
+        }
         break;
     }
   })
