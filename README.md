@@ -11,7 +11,7 @@ Trabalho de conclusão da disciplina de Compiladores (CCP154GP).
 ## Sobre:
 Projeto de conclusão do curso de compiladores, se trata de um analisador léxico da linguagem Hpl(Harry Potter Language), uma linguagem de programação que possui seus tokens / palavras reservadas baseadas no universo de Harry Potter.
 
-[Saiba Mais](https://great-cotton-8c1.notion.site/Analisador-L-xico-b9a46962e14e48f4aeecb03519c80fdd)
+[Saiba Mais](https://great-cotton-8c1.notion.site/Analisador-L-xico-b9a46962e14e48f4aeecb03519c80fdd)<br>
 [Arquivos do Drive](https://drive.google.com/drive/folders/1I-0nS0Mi4qCvtlX7rNhTRujfHJWc3Nvz?usp=sharing)
 
 ## Documentation:
